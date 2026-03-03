@@ -1,0 +1,301 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+body {
+    font-family: cursive, 'Trebuchet MS', 'Lucida Sans Unicode',
+                 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-bg {
+    background-color: rgb(194, 49, 194);
+}
+
+.main-color {
+    color: rgb(10, 155, 34) !important;
+    background-color: rgba(45, 55, 196, 0.671) !important;
+}
+
+/* =====================================
+   PRELOADER
+===================================== */
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid #ffc107;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* =====================================
+   NAVBAR (HOVER + ACTIVE FIX)
+===================================== */
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: 0.3s ease;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Warna teks saat menu aktif atau di-hover */
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Warna kuning seperti tombol kamu */
+    font-weight: bold;
+    border-bottom: 2px solid #ffc107; /* Memberi garis bawah */
+}
+
+/* Mengatur jarak agar garis bawah tidak menempel teks */
+.navbar-nav .nav-link {
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+/* Efek Hover pada Kategori di halaman Produk */
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+/* =====================================
+   BANNER (HOME)
+===================================== */
+
+.banner {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('../image/Banner1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* =====================================
+   PRODUK BANNER (HALAMAN PRODUK)
+===================================== */
+
+.produk-banner {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* =====================================
+   CARD HOVER EFFECT
+===================================== */
+
+.hovered-card,
+.card-promo,
+.pelayanan-content,
+.menu-favorit-content {
+    transition: 0.3s;
+}
+
+.hovered-card:hover,
+.card-promo:hover,
+.pelayanan-content:hover,
+.menu-favorit-content:hover {
+    transform: scale(1.05);
+}
+
+/* =====================================
+   PELAYANAN
+===================================== */
+
+.pelayanan {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.pelayanan .icon-circle {
+    width: 90px;
+    height: 90px;
+    border: solid 2px;
+}
+
+/* =====================================
+   MENU FAVORIT
+===================================== */
+
+.menu-favorit {
+    background-color: #f3f3f3;
+}
+
+/* =====================================
+   TESTIMONY
+===================================== */
+
+.testimony {
+    background: linear-gradient(135deg, #5f0a87, #a4508b);
+}
+
+.testimony-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 28px;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.testimony-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.13);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.testimony-card h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.testimony-card .author {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 12px;
+}
+
+.testimony-card p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.testimony-card .stars {
+    color: #FFC107;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+/* =====================================
+   SUBSCRIBE
+===================================== */
+
+.subscribe-content {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,193,7,0.4);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    background-color: #595959;
+}
+
+.footer .social-icon {
+    font-size: 1.6rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.footer .social-icon:hover {
+    color: #FFC107;
+}
+
+/* =====================================
+   SCROLL OFFSET (JIKA ADA NAVBAR FIXED)
+===================================== */
+
+#produk {
+    scroll-margin-top: 70px;
+}
+
+
+
+/*========================================
+        KERANJANG
+========================================*/
+.btn-minus, .btn-plus {
+    border-radius: 50% !important;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table img {
+    transition: .3s;
+}
+
+.table img:hover {
+    transform: scale(1.1);
+}
